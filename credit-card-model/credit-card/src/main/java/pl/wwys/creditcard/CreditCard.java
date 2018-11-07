@@ -29,4 +29,8 @@ class CreditCard {
             System.out.println("Card blocked!");
         }
     }
+    
+    public void repay(double money) {
+        this.limit = money;
+    }
 }
