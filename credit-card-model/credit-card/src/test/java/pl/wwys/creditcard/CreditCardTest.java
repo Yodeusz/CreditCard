@@ -1,4 +1,4 @@
-package pl.jkan.creditcard;
+package pl.wwys.creditcard;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class CreditCardTest {
         //Act / When
         card.assignLimit(2000);
         //Asser / Then
-        Assert.assertTrue(card.getBalance() == 2000);
+        Assert.assertTrue(card.getLimit() == 2000);
     }
     
     @Test
@@ -30,6 +30,6 @@ public class CreditCardTest {
         
         card.withdraw(200);
         
-        Assert.assertEquals(1800, card.getBalance());
+        Assert.assertEquals(1800, card.getLimit(),0);
     }
 }
