@@ -32,4 +32,16 @@ public class CreditCardTest {
         
         Assert.assertEquals(1800, card.getLimit(),0);
     }
+    
+    @Test
+    public void allowRepay() {
+        CreditCard card = new CreditCard();
+        card.assignLimit(2000);
+        
+        card.withdraw(200);
+        
+        card.repay(100);
+        
+        Assert.assertEquals(100, card.getCredit(), 0);
+    }
 }

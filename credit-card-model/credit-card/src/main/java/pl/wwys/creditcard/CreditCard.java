@@ -4,6 +4,7 @@ class CreditCard {
     
     private boolean blockade = false;
     private double limit = 0;
+    private double credit = 0;
     
     public void assignLimit(double money) {
         this.limit = money;
@@ -22,11 +23,20 @@ class CreditCard {
     }
     
     public void withdraw(double amount) {
-        if (!blockade){
+        if (!blockade || amount<this.limit){
             this.limit -= amount;
+            this.credit += amount;
         }
         else {
             System.out.println("Card blocked!");
         }
+    }
+    
+    public void repay(double money) {
+        this.credit -= money;
+    }
+    
+    public double getCredit(){
+        return credit;
     }
 }
