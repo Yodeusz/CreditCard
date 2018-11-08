@@ -36,6 +36,12 @@ public class CreditCardTest {
     @Test
     public void allowRepay() {
         CreditCard card = new CreditCard();
+        double limit = 500;
+        card.assignLimit(limit);
+        card.withdraw(200);
+        
+        card.repay(limit);
+        Assert.assertEquals(limit, card.getLimit(), 0);
         card.assignLimit(2000);
         
         card.withdraw(200);

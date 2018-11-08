@@ -33,6 +33,7 @@ class CreditCard {
     }
     
     public void repay(double money) {
+        this.limit = money;
         this.credit -= money;
     }
     
