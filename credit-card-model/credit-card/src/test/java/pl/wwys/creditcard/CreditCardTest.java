@@ -42,5 +42,12 @@ public class CreditCardTest {
         
         card.repay(limit);
         Assert.assertEquals(limit, card.getLimit(), 0);
+        card.assignLimit(2000);
+        
+        card.withdraw(200);
+        
+        card.repay(100);
+        
+        Assert.assertEquals(100, card.getCredit(), 0);
     }
 }
