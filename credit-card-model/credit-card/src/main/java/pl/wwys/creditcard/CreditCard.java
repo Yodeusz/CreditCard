@@ -23,7 +23,7 @@ class CreditCard {
     }
     
     public void withdraw(double amount) {
-        if (!blockade || amount<this.limit){
+        if (!blockade || amount+this.credit<this.limit){
             this.limit -= amount;
             this.credit += amount;
         }
